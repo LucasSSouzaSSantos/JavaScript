@@ -8,7 +8,18 @@
 <body>
     <script>
         // operadores lógicos and(&&) e or(||)
-        
+        var pontos = 40;
+        // condição de vitória:
+        /*
+            vitoria >= 30 && vitoria <= 40 ||
+            vitoria >= 70 && vitoria <= 80
+        */
+        if((30 <= pontos <= 40) || (70 <= pontos <= 80)){
+            document.write("Ganhou")
+        }
+        else{
+            document.write("Perdeu")
+        }
     </script>
 </body>
 </html>
