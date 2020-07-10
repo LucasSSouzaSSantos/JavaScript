@@ -6,16 +6,28 @@
     <title>If multiplo</title>
 </head>
 <body>
-    <script>
-        var nota = 90;
-        if(nota >= 60){
+    <script lang="javascript">
+        var nota = 15;
+        // Aprovado com louvor > 95
+        // aprovado >= 60
+        // recuperação nota >= 40 && nota <= 60
+        // reprovado < 40
+        // reprovado com louvor < 20
+        
+        if(nota > 95){
+            res = "Aprovado com louvor";
+        }
+        else if(nota >= 60){
             res = "Aprovado";
         }
-        else if((nota >= 40) && (nota < 60)){
-            res = "Recuperação"
+        else if(nota >= 40){
+            res = "Recuperação";
+        }
+        else if(nota >= 20){
+            res = "Reprovado";
         }
         else{
-            res = "Reprovado";
+            res = "Reprovado com louvor";
         }
         document.write(res);
     </script>
