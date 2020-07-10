@@ -7,7 +7,27 @@
 </head>
 <body>
     <script>
-        
+        // if aninhado é quando eu tenho um if dentro do outro if
+        var nota = 10;
+    
+        if (nota >= 60){
+            if(nota > 95){
+                res = "Aprovado com louvor";
+            }
+            else{
+                res = "Aprovado por nota";
+            }
+        }else if(nota >= 40){
+            res = "Recuperação";
+        }
+        else{
+            if(nota >= 20){
+                res = "Reprovado";
+            }else{
+                res = "Reprovado por nota";
+            }
+        }
+        document.write(res);
     </script>
 </body>
 </html>
