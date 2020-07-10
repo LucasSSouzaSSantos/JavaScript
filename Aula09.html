@@ -7,7 +7,17 @@
 </head>
 <body>
     <script>
-
+        var nota = 90;
+        if(nota >= 60){
+            res = "Aprovado";
+        }
+        else if((nota >= 40) && (nota < 60)){
+            res = "Recuperação"
+        }
+        else{
+            res = "Reprovado";
+        }
+        document.write(res);
     </script>
 </body>
 </html>
