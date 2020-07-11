@@ -8,7 +8,7 @@
 <body>
     <script>
         var cont = 1;
-        document.write("|")
+        document.write("|");
          while(cont < 10){
              document.write(cont + " ");
              if(cont == 3 || cont == 6){
@@ -16,7 +16,22 @@
              }
              cont++;
          }
-         document.write("|")
+         document.write("|");
+         document.write("<hr>");
+         num = 10;
+         while(--num){
+             document.write(num + "- Lucas <br>");
+         }
+         document.write("hr");
+         num = true;
+         cont = 0;
+         while(num){
+             document.write("Lucas");
+             if(cont == 9){
+                 num = false;
+             }
+            cont++;
+         }
     </script>
 </body>
 </html>
