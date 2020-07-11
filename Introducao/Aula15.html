@@ -7,14 +7,14 @@
 </head>
 <body>
     <script>
-        var mochila = [];
+        var mochila1 = [];
 
-        mochila.push("Faca");
-        mochila.push("Corda");
-        mochila.push("Pederneira");
-        mochila.push("Chave");
-        mochila.push("Lanterna");
-        mochila.push("Pedra");
+        mochila1.push("Faca");
+        mochila1.push("Corda");
+        mochila1.push("Pederneira");
+        mochila1.push("Chave");
+        mochila1.push("Lanterna");
+        mochila1.push("Pedra");
 
 
         document.write(mochila[0] + "<br>");
@@ -24,7 +24,7 @@
         document.write(mochila[4] + "<br>");
         document.write(mochila[5] + "<br>");
 
-        pos = mochila.indexOf("Lanterna");
+        pos = mochila1.indexOf("Lanterna");
 
         if(pos < 0){
             document.write("Item não está na mochila");
@@ -52,8 +52,24 @@
         document.write(num[2] + "<br>");
         document.write(num[3] + "<br>");
 
-        
 
+        numero = num.join();
+        // o método join pega os valores do vetor como dentro da variáveil número
+        // separados por virgula.
+
+        // concatenando dois ou mais arrays
+        var mochila2 = [];
+        mochila2.push("bolsa")
+        mochila2.push("arame")
+        
+        mochila = mochila1.concat(mochila2);
+
+
+        // length retorna o tamanho do elemento
+
+        document.write(mochila1.length);
+        document.write(mochila2.length);
+        document.write(mochila.length);
     </script>
 </body>
 </html>
