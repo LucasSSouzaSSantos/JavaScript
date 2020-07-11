@@ -7,6 +7,8 @@
 </head>
 <body>
     <script>
+        var mochila = [];
+
         mochila.push("Faca");
         mochila.push("Corda");
         mochila.push("Pederneira");
@@ -21,6 +23,15 @@
         document.write(mochila[3] + "<br>");
         document.write(mochila[4] + "<br>");
         document.write(mochila[5] + "<br>");
+
+        pos = mochila.indexOf("Lanterna");
+
+        if(pos < 0){
+            document.write("Item não está na mochila");
+        }
+        else{
+            document.write("Item está na mochila");
+        }
     </script>
 </body>
 </html>
