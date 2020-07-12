@@ -10,12 +10,15 @@
         try {
             num = prompt("Digite um valor: ");
             if(num > 10){
-            throw new Error("Valor invalido.");
+            throw new Error("O valor máximo e 10.");
             document.writi("Lucas");
             }
         } catch (error) {
-            document.write("Erro: " + error.message);
-                      
+            console.log("Erro: " + error.message);
+            num = 10;
+        }
+        finally{
+            document.write("Valor: "+ num);
         }
 
         // é necessário, algumas vezes, gerar um erro manualmente.
