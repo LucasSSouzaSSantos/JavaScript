@@ -7,7 +7,18 @@
 </head>
 <body>
     <script>
-        
+        try {
+            num = prompt("Digite um valor: ");
+            if(num > 10){
+            throw new Error("Valor invalido.");
+            document.writi("Lucas");
+            }
+        } catch (error) {
+            document.write("Erro: " + error.message);
+                      
+        }
+
+        // é necessário, algumas vezes, gerar um erro manualmente.
     </script>
 </body>
 </html>
