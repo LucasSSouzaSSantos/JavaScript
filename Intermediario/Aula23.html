@@ -4,8 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>manipulação de html</title>
+    
 </head>
 <body>
+    <p id="texto">CFB Cursos</p>
+    <div id="caixa"></div>
+    <script>
+        // apontando para o elemento paragrafo da página
+        function cor(id, cor){
+            paragrafo = document.getElementById(id);
+            paragrafo.style.color = cor;
+        }
+
+        cor("texto", "#f00");
+
+        var cx = document.getElementById("caixa");
+        cx.style.border = "1px solid #000";
+        cx.style.width = "300px";
+        cx.style.height= "300px";
+        cx.style.background = "#aaa";
+        cx.style.display = "none";
+    </script>
     
 </body>
 </html>
