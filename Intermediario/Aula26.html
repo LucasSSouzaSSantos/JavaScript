@@ -16,10 +16,14 @@
         div{
             border: solid 1px #000;
             padding: 10px;
+            margin: 5px;
             display: inline-block;
         }
         a{
             display: block;
+        }
+        .quadro2{
+            background-color: aqua;
         }
     </style>
 </head>
@@ -30,22 +34,56 @@
     </p>
     <h2 class="titulo">Curso de Javascript</h2>
     <p>www.youtube.com/cfbcuros</p>
-    <p>cfbcursos.com.br</p>
-    <div>
+    <p class="titulo">cfbcursos.com.br</p>
+    <div class="quadro1">
         <p>Este texto está dentro de uma div</p>
         <p>Este também</p>
     </div>
+
+    <div class="quadro2">
+        <p>Este texto está dentro de uma div</p>
+        <p>Este também</p>
+    </div>
+    
     <a href="http://www.youtube.com/cfbcursos" target="_blank">CANAL</a>
     <a href="http://cfbcursos.com.br">SITE</a>
-
+    <hr>
     <script>
         /*
         Com o queryselectorall eu posso apontar para elementos que usam uma 
         classe, para elementos que estão dentro de outro elementos; tem mais 
         possibilidade para apontar para elemento.
-        
-        
         */
+
+        var ps = document.querySelectorAll("p");
+        document.write("Imprimindo o primeiro paragrafo:<br><br>");
+        document.write(ps[0].innerHTML + "<br><br>");
+        ps[0].style.color = "#00f";
+        ps[0].innerHTML = "Novo texto";
+
+        // eu quero pegar todas as tag que usam a mesma classe
+
+        var elemento = document.querySelectorAll(".titulo");
+        for(var i = 0; i < elemento.length; i++){
+            document.write(elemento[i].innerHTML + "<br>")
+            elemento[i].style.color = "#0f0";
+            elemento[i].style.fontSize = "30px";
+        }
+
+        var elementoDiv1 = document.querySelectorAll("div.quadro1 > p");
+        for (var i = 0; i < elementoDiv1.length; i++){
+            elementoDiv1[i].innerHTML = "Mudou Tudo!!!! HA HA HA";
+            elementoDiv1[i].style.fontSize = "20px";
+        }
+
+        var elementoDiv2 = document.querySelectorAll("div.quadro2 > *");
+        for(var i = 0; elementoDiv2.length; i++){
+            elementoDiv2[i].style.color = "#fff";
+        }
+        elementoDiv2.style.fontSize = "50px";
+        
+        
+
     </script>
     
 </body>
