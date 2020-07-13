@@ -55,6 +55,13 @@
         possibilidade para apontar para elemento.
         */
 
+        var variosElementos = document.querySelectorAll("h1, h2, p");
+        for (var i = 0; i < variosElementos.length; i++){
+            
+            variosElementos[i].style.color = "#0f0";
+        }
+
+
         var ps = document.querySelectorAll("p");
         document.write("Imprimindo o primeiro paragrafo:<br><br>");
         document.write(ps[0].innerHTML + "<br><br>");
@@ -75,16 +82,16 @@
             elementoDiv1[i].innerHTML = "Mudou Tudo!!!! HA HA HA";
             elementoDiv1[i].style.fontSize = "20px";
         }
-
+        // modificando elemento através de sua classe
         var elementoDiv2 = document.querySelectorAll("div.quadro2 > *");
         for(var i = 0; elementoDiv2.length; i++){
             elementoDiv2[i].style.color = "#fff";
         }
-        elementoDiv2.style.fontSize = "50px";
-        
-        
+        // selecionando vários elementos
+        // document.write("<hr>");
 
-    </script>
+
+        </script>
     
 </body>
 </html>
