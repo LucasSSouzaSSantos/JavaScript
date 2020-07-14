@@ -8,7 +8,29 @@
 <body>
     <script>
         // A aula 28 vai trabalhar com manipulação de data e hora
+        document.write(Date() + "<br>");
+        var dt = new Date();
+        var ndt = new Date();
         
+        var diaSem = dt.getDay();
+        var dia = dt.getDate();
+        var mes = dt.getMonth();
+        var ano = dt.getFullYear();
+        var hora = dt.getHours();
+        var minutos = dt.getMinutes();
+        var segundo = dt.getSeconds();
+        var meses = new Array();
+        meses = ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho",
+        "Julho", "Agosto", "Setembro", "Outrubro", "Novembro", "Dezembro"];
+        
+        var diasSemana = new Array();
+        diasSemana = ["Domingo", "Segunda-feira", "Terça-feira", "Quarta-feira",
+                     "Quinta-feira", "Sexta-feira", "Sábado"];
+        
+        
+        document.write(diasSemana[diaSem] + "," + dia + " de " + meses[mes] + 
+        " de " + ano);
+        document.write("<br>" + hora + ":" + minutos + ":" + segundo);
     </script>
     
 </body>
