@@ -10,19 +10,62 @@
         }
         input{
             display: block;
+            border-radius: 10px;
+            margin: 10px;
         }
         input[type=submit]{
-            margin-top: 10px;
+            margin: 10px 0px 0px 0px;
         }
     </style>
 </head>
 <body>
-    <form name="curso1" id="curso1" action="#" method="POST">
+    <form name="curso1" id="curso1" action="#" method="GET">
         <label>Nome</label>
         <input type="text" name="fNome" id="teste" value="Primeiro - 1">
         <label>Senha</label>
         <input type="password" name="fSenha" value="123">
         <input type="submit" name="btEnvia" value="Enviar">
     </form>
+
+    <hr>
+
+    <script>
+        // o método forms retorna o formulário
+        var fm = document.forms.length;
+        document.write(fm);
+        // o forms não aponta para os elementos do formulário e sim para o 
+        // formulário. Primeiro precisamos apontar para o formulário, depois 
+        // para os elementos do formulário.
+
+        // fm, a variável criada logo acima, vai está indicando a quantidade de
+        // formulários existente na página. Nesse exemplo apenas 1 formulário.
+
+        // para manipular o formulário
+
+        var fm2 = document.forms[0];
+        document.write("<br>Id do formulário: " + fm2.id + "<br>");
+        document.write("Nome do formulário: " + fm2.name + "<br>");
+        document.write("Ação do formulário: " + fm2.action + "<br>");
+        document.write("valor do formulário: " + fm2.method + "<br>");
+
+        // outras maneiras de retornar um formulário
+
+        var fm3 = document.forms.item(0);
+        document.write("<br>Id do formulário: " + fm3.id + "<br>");
+        document.write("Nome do formulário: " + fm3.name + "<br>");
+        document.write("Ação do formulário: " + fm3.action + "<br>");
+        document.write("valor do formulário: " + fm3.method + "<br>");
+
+        var fm4 = document.forms.namedItem("curso1");
+        document.write("<br>Id do formulário: " + fm4.id + "<br>");
+        document.write("Nome do formulário: " + fm4.name + "<br>");
+        document.write("Ação do formulário: " + fm4.action + "<br>");
+        document.write("valor do formulário: " + fm4.method + "<br>");
+
+        var fm5 = document.forms.namedItem("curso1").innerHTML;
+        document.write(fm5);
+    </script>
+
+
 </body>
 </html>
