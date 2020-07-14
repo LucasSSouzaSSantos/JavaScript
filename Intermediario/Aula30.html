@@ -7,7 +7,21 @@
 </head>
 <body>
     <script>
-        
+        function escreva(){
+            document.write("curso de javascript - cfb cursos");
+        }
+        function soma(n1, n2){
+            escreva();
+            soma = n1 + n2;
+            document.write("<br>Soma: " + soma);
+        }
+        function adicao(n1, n2){
+            return n1 + n2;
+        }
+
+        soma(3, 4);
+        soma = adicao(4, 6);
+        document.write("<br>" + soma);
     </script>
 </body>
 </html>
