@@ -31,8 +31,10 @@
 
     <script>
         // o método forms retorna o formulário
+        
         var fm = document.forms.length;
-        document.write(fm);
+        // document.write(fm);
+        
         // o forms não aponta para os elementos do formulário e sim para o 
         // formulário. Primeiro precisamos apontar para o formulário, depois 
         // para os elementos do formulário.
@@ -42,6 +44,7 @@
 
         // para manipular o formulário
 
+        
         var fm2 = document.forms[0];
         document.write("<br>Id do formulário: " + fm2.id + "<br>");
         document.write("Nome do formulário: " + fm2.name + "<br>");
@@ -64,6 +67,21 @@
 
         var fm5 = document.forms.namedItem("curso1").innerHTML;
         document.write(fm5);
+        
+        
+        var fm6 = document.forms[0];
+        var el = fm6.elements;
+
+        for(var i = 0; i < el.length - 1; i++){
+            el[i].style.backgroundColor = "#ddd";
+            el[i].value = "Lucas de Souza";
+        }
+        // fm6 vai apontar para o elemento de indice 0, os label não contam
+        // então o primeiro input.
+
+        var fm7 = document.getElementById("curso1").elements[0].value = "mudou";
+
+        // Primeiro devemos apontar para o formulário e depois para o elemento
     </script>
 
 
