@@ -15,6 +15,35 @@
             top: 0px;
         }
     </style>
+    <script>
+        function msg(){
+            alert("Lucas maneiro");
+        }
+        function cor1(){
+            var obj = document.getElementById("dv1");
+            obj.style.backgroundColor = "#fff";
+        }
+        function cor2(){
+            var obj = document.getElementById("dv1");
+            obj.style.backgroundColor = "#f00";
+        }
+        function cor(obj, cor){
+            obj.style.backgroundColor = cor;
+        }
+        // Inicialização de eventos
+
+        function addEventos(){
+           var obj = document.getElementById("dv1");
+           obj.addEventListener("click", msg);
+           obj.addEventListener("mouseover", function(event){
+               cor(obj, "#fff");
+           });
+           obj.addEventListener("mouseout", function(event){
+               cor(obj, "#f00");
+           });
+        }
+        window.addEventListener("load", addEventos);
+    </script>
 </head>
 <body>
     <div id="dv1">Div Aqui</div>
