@@ -4,11 +4,65 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>addEventListener Parte 2</title>
-    <scrip>
-        
-    </scrip>
+    <style>
+        #dv1{
+            width: 100px;
+            height: 100px;
+            border: 1px solid #000;
+            background-color: #f00;
+            position: absolute;
+            left: 0px;
+            top: 0px;
+        }
+    </style>
+    <script>
+        var cont = 0;
+        var px = 0;
+        // xis para a esquerda é negativo e xis para a dereita é positivo
+        var py = 0;
+        // y para cima é negativo e y para baixo é positivo
+        function move(){
+            var obj = document.getElementById("dv1");
+            var tecla = event.keyCode;
+            // código das teclas direcionais
+            // seta para esquerda - 37
+            // seta para cima - 38
+            // seta para direita - 39
+            // seta para baixo - 40
+            if(tecla == 37){
+                px -= 10;
+                obj.style.left = px+"px";
+                
+            }else if(tecla == 38){
+                py -= 10;
+                obj.style.top = py + "px";
+            }else if(tecla == 39){
+                px += 10;
+                obj.style.left = px + "px";
+            }else if(tecla == 13){
+                if(cont == 0){
+                alert("Evento keydown removido");
+                this.removeEventListener("keydown", move);
+                alert("aperte enter novamente para continuar");
+                cont += 1
+                }else if(cont == 1){
+                    this.addEventListener("keydown", move);
+                    cont = 0;
+                }
+                // como a função está relacionada ao document pode ser usado o
+                // this ou document antes do removeEventListener("keydown", move)
+            }else if(tecla == 40){
+                py += 10;
+                obj.style.top = py + "px";
+            }
+        }
+        document.addEventListener("keydown",move);
+    </script>
 </head>
 <body>
+    <div id="dv1">
+
+    </div>
     
 </body>
 </html>
