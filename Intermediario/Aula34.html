@@ -16,7 +16,6 @@
         }
     </style>
     <script>
-        var cont = 0;
         var px = 0;
         // xis para a esquerda é negativo e xis para a dereita é positivo
         var py = 0;
@@ -40,15 +39,7 @@
                 px += 10;
                 obj.style.left = px + "px";
             }else if(tecla == 13){
-                if(cont == 0){
-                alert("Evento keydown removido");
-                this.removeEventListener("keydown", move);
-                alert("aperte enter novamente para continuar");
-                cont += 1
-                }else if(cont == 1){
-                    this.addEventListener("keydown", move);
-                    cont = 0;
-                }
+                this.addEventListener("keydown", move);
                 // como a função está relacionada ao document pode ser usado o
                 // this ou document antes do removeEventListener("keydown", move)
             }else if(tecla == 40){

@@ -9,11 +9,52 @@
             width: 100px;
             height: 100px;
             border: 1px solid #000;
-            background-color: #f00;
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            background-color: #fff;
         }
     </style>
-    <script>
 
+    <script>
+        var px = 0;
+        var py = 0;
+
+        function move(){
+            var obj = document.getElementById("dv1");
+            obj.style.backgroundColor = "#f00";
+            var tecla = event.keyCode;
+
+            if(tecla == 37){
+                px -= 10;
+                obj.style.left = px + "px";
+            }else if(tecla == 38){
+                py -= 10;
+                obj.style.top = py + "px";
+            }else if(tecla == 39){
+                px += 10;
+                obj.style.left = px + "px";
+            }else if(tecla == 40){
+                py += 10;
+                obj.style.top = py + "px";
+            }else if (tecla == 13){
+                obj.style.backgroundColor = "#fff";
+                alert("Evento keydown removido.")
+                document.removeEventListener("keydown", move);
+            }
+            
+        }
+        function iniciar(){
+            var obj = document.getElementById("dv1");
+            obj.addEventListener("click", entrar);
+        }
+        function entrar(){
+            var obj = document.getElementById("dv1");
+            alert("Evento keydown adicionado");
+            document.addEventListener("keydown", move);            
+        }
+        window.addEventListener("load", iniciar);
+               
     </script>
 </head>
 <body>
