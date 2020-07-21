@@ -16,8 +16,8 @@
         }
     </style>
 
-    <script>
-        var jog;
+    <script lang="javascript">
+        var jog = document.getElementById("jogador");
         var vel;  // controle da velocidade
         var dx, dy; // controlar a direção
         var px, py; // controlar a posição
@@ -25,13 +25,13 @@
 
         function inicia(){
             vel = 10; dx = 1; dy = 0; px = 0; py = 0;
-            jog = document.getElementById("jogador");
         }
         function game(){
+            jog = document.getElementById("jogador");
             px += dx * vel;
-            py += dy * vel;
+            // py += dy * vel;
             jog.style.left = px + "px";
-            jog.style.top  = py + "px";
+            // jog.style.top  = py + "px";            
             
         }
         window.addEventListener("load", inicia);
