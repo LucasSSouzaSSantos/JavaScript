@@ -16,42 +16,42 @@
 </head>
 <body>
     <div id="titulo"></div>
-    <table>
+    <table id="tbnotas">
         <tr>
         <th>Alunos</th> <th>Nota 1</th> <th>Nota 2</th> <th>Resultado</th>
         </th>
 
         <tr>
-            <th>Al1</th> <th>35</th> <th>48</th> <th id="n1">83</th>
+            <th>Al1</th> <th>35</th> <th>48</th> <th id="n1"></th>
         </th>
 
         <tr>
-            <th>Al2</th> <th>20</th> <th>15</th><th id="n2">35</th>
+            <th>Al2</th> <th>20</th> <th>15</th><th id="n2"></th>
         </th>
         
         <tr>
-            <th>Al3</th> <th>48</th> <th>48</th> <th id="n3">96</th>
+            <th>Al3</th> <th>48</th> <th>48</th> <th id="n3"></th>
         </th>
 
         <tr>
-            <th>Al4</th> <th>10</th> <th>50</th> <th id="n4">60</th>
+            <th>Al4</th> <th>10</th> <th>50</th> <th id="n4"></th>
         </tr>
     </table>
     <script lang="javascript">
-        var nota = [];
-        nota[0] = document.getElementById("n1");
-        nota[1] = document.getElementById("n2");
-        nota[2] = document.getElementById("n3");
-        nota[3] = document.getElementById("n4");
-        
-        for (var i = 0; i < nota.length; i++){
-            if(nota[i].innerHTML < 70){
-                nota[i].style.color = "f00";
+        var tabela = document.getElementById("tbnotas");
+        var nota;
 
+        for (var i = 1; i < tabela.rows.length; i++){
+            nota = parseFloat(tabela.rows[i].cells[1].innerHTML) + parseFloat(tabela.rows[i].cells[2].innerHTML);
+            tabela.rows[i].cells[3].innerHTML = nota;
+            if(nota < 70){
+                tabela.rows[i].cells[3].style.color = "#f00";
             }else{
-                nota[i].style.color = "#00f";
+                tabela.rows[i].cells[3].style.color = "#00f";
             }
+            
         }
+        
     </script>
     
 </body>
